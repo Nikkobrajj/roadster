@@ -93,6 +93,7 @@ def reach(C, route):
     x = dist[-1]/2
     tol = 10**(-4)
     dx = 2 * tol
+    dx = -(total_consumption(x, route, n)-C)/consumption(velocity(x, route)) #Bättre att börja med denna, annars är första ett jättelitet steg följt av ett stort, alternativt byt plats på x och dx i loopen
     while (abs(dx) > tol):
         x = x + dx
         dx = -(total_consumption(x, route, n)-C)/consumption(velocity(x, route))
